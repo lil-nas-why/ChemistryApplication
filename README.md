@@ -1,6 +1,8 @@
 # Работа приложения
 ***
+
 Старт программы:
+
 ![image](https://github.com/lil-nas-why/ChemistryApplication/assets/116517177/1cf42bb9-a296-4eb4-bfcb-862cac6b80d8)
 
 Отображение PDF файла по нажатию на тему лекции

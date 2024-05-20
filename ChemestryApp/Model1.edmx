@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище MendeleevModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MendelevDB">
+          <Key>
+            <PropertyRef Name="AtomicNumber" />
+          </Key>
+          <Property Name="AtomicNumber" Type="int" Nullable="false" />
+          <Property Name="Element" Type="nvarchar" MaxLength="100" />
+          <Property Name="Symbol" Type="nvarchar" MaxLength="3" />
+          <Property Name="AtomicMass" Type="float" />
+          <Property Name="NumberofNeutrons" Type="int" />
+          <Property Name="NumberofProtons" Type="int" />
+          <Property Name="NumberofElectrons" Type="int" />
+          <Property Name="Period" Type="int" />
+          <Property Name="Group" Type="int" />
+          <Property Name="Phase" Type="nvarchar" MaxLength="10" />
+          <Property Name="Radioactive" Type="nvarchar" MaxLength="5" />
+          <Property Name="Natural" Type="nvarchar" MaxLength="5" />
+          <Property Name="Metal" Type="nvarchar" MaxLength="5" />
+          <Property Name="Nonmetal" Type="nvarchar" MaxLength="5" />
+          <Property Name="Metalloid" Type="nvarchar" MaxLength="5" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="AtomicRadius" Type="float" />
+          <Property Name="Electronegativity" Type="float" />
+          <Property Name="FirstIonization" Type="float" />
+          <Property Name="Density" Type="float" />
+          <Property Name="MeltingPoint" Type="float" />
+          <Property Name="BoilingPoint" Type="float" />
+          <Property Name="NumberOfIsotopes" Type="int" />
+          <Property Name="Discoverer" Type="varchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
+          <Property Name="SpecificHeat" Type="float" />
+          <Property Name="NumberofShells" Type="int" />
+          <Property Name="NumberofValence" Type="int" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="Хранилище MendeleevModelContainer">
+          <EntitySet Name="MendelevDB" EntityType="Self.MendelevDB" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MendeleevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MendelevDB">
+          <Key>
+            <PropertyRef Name="AtomicNumber" />
+          </Key>
+          <Property Name="AtomicNumber" Type="Int32" Nullable="false" />
+          <Property Name="Element" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Symbol" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="AtomicMass" Type="Double" />
+          <Property Name="NumberofNeutrons" Type="Int32" />
+          <Property Name="NumberofProtons" Type="Int32" />
+          <Property Name="NumberofElectrons" Type="Int32" />
+          <Property Name="Period" Type="Int32" />
+          <Property Name="Group" Type="Int32" />
+          <Property Name="Phase" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Radioactive" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Natural" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Metal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Nonmetal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Metalloid" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AtomicRadius" Type="Double" />
+          <Property Name="Electronegativity" Type="Double" />
+          <Property Name="FirstIonization" Type="Double" />
+          <Property Name="Density" Type="Double" />
+          <Property Name="MeltingPoint" Type="Double" />
+          <Property Name="BoilingPoint" Type="Double" />
+          <Property Name="NumberOfIsotopes" Type="Int32" />
+          <Property Name="Discoverer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="SpecificHeat" Type="Double" />
+          <Property Name="NumberofShells" Type="Int32" />
+          <Property Name="NumberofValence" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MendeleevEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MendelevDB" EntityType="Self.MendelevDB" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MendeleevModelContainer" CdmEntityContainer="MendeleevEntities">
+          <EntitySetMapping Name="MendelevDB">
+            <EntityTypeMapping TypeName="MendeleevModel.MendelevDB">
+              <MappingFragment StoreEntitySet="MendelevDB">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AtomicNumber" ColumnName="AtomicNumber" />
+                <ScalarProperty Name="Element" ColumnName="Element" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="AtomicMass" ColumnName="AtomicMass" />
+                <ScalarProperty Name="NumberofNeutrons" ColumnName="NumberofNeutrons" />
+                <ScalarProperty Name="NumberofProtons" ColumnName="NumberofProtons" />
+                <ScalarProperty Name="NumberofElectrons" ColumnName="NumberofElectrons" />
+                <ScalarProperty Name="Period" ColumnName="Period" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="Phase" ColumnName="Phase" />
+                <ScalarProperty Name="Radioactive" ColumnName="Radioactive" />
+                <ScalarProperty Name="Natural" ColumnName="Natural" />
+                <ScalarProperty Name="Metal" ColumnName="Metal" />
+                <ScalarProperty Name="Nonmetal" ColumnName="Nonmetal" />
+                <ScalarProperty Name="Metalloid" ColumnName="Metalloid" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="AtomicRadius" ColumnName="AtomicRadius" />
+                <ScalarProperty Name="Electronegativity" ColumnName="Electronegativity" />
+                <ScalarProperty Name="FirstIonization" ColumnName="FirstIonization" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="MeltingPoint" ColumnName="MeltingPoint" />
+                <ScalarProperty Name="BoilingPoint" ColumnName="BoilingPoint" />
+                <ScalarProperty Name="NumberOfIsotopes" ColumnName="NumberOfIsotopes" />
+                <ScalarProperty Name="Discoverer" ColumnName="Discoverer" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="SpecificHeat" ColumnName="SpecificHeat" />
+                <ScalarProperty Name="NumberofShells" ColumnName="NumberofShells" />
+                <ScalarProperty Name="NumberofValence" ColumnName="NumberofValence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

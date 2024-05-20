@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD96B35F-A495-4E13-80E8-9082F65F5FA4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ChemestryApp</RootNamespace>
+    <AssemblyName>ChemestryApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="TablePage.xaml.cs">
+      <DependentUpon>TablePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMendeleevPage.xaml.cs">
+      <DependentUpon>ViewMendeleevPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FrameManager.cs" />
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="TablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewMendeleevPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MendelevDB.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="elements\01-hydrogen.png" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <EmbeddedResource Include="pdf\01.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pdf\03.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pdf\04.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pdf\02.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="elements\t1.jpg" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="elements\02-Helium.png" />
+    <Resource Include="elements\03-Lithium.png" />
+    <Resource Include="elements\04-Beryllium.png" />
+    <Resource Include="elements\05-Boron.png" />
+    <Resource Include="elements\06-Carbon.png" />
+    <Resource Include="elements\07-Nitrogen.png" />
+    <Resource Include="elements\08-Oxygen.png" />
+    <Resource Include="elements\09-Fluorine.png" />
+    <Resource Include="elements\10-Neon.png" />
+    <Resource Include="elements\100-Fermium.png" />
+    <Resource Include="elements\101-Mendelevium.png" />
+    <Resource Include="elements\102-Nobelium.png" />
+    <Resource Include="elements\103-Lawrencium.png" />
+    <Resource Include="elements\104-Rutherfordium.png" />
+    <Resource Include="elements\105-Dubnium.png" />
+    <Resource Include="elements\106-Seaborgium.png" />
+    <Resource Include="elements\107-Bohrium.png" />
+    <Resource Include="elements\108-Hassium.png" />
+    <Resource Include="elements\109-Meitnerium.png" />
+    <Resource Include="elements\11-Sodium.png" />
+    <Resource Include="elements\110-Darmstadtium.png" />
+    <Resource Include="elements\111-Roentgenium.png" />
+    <Resource Include="elements\112-Copernicium.png" />
+    <Resource Include="elements\113-Ununtrium.png" />
+    <Resource Include="elements\114-Flerovium.png" />
+    <Resource Include="elements\115-Ununpentium.png" />
+    <Resource Include="elements\116-Livermorium.png" />
+    <Resource Include="elements\117-Ununseptium.png" />
+    <Resource Include="elements\118-Ununoctium.png" />
+    <Resource Include="elements\12-Magnesium.png" />
+    <Resource Include="elements\13-Aluminum.png" />
+    <Resource Include="elements\14-Silicon.png" />
+    <Resource Include="elements\15-Phosphorus.png" />
+    <Resource Include="elements\16-Sulfur.png" />
+    <Resource Include="elements\17-Chlorine.png" />
+    <Resource Include="elements\18-Argon.png" />
+    <Resource Include="elements\19-Potassium.png" />
+    <Resource Include="elements\20-Calcium.png" />
+    <Resource Include="elements\21-Scandium.png" />
+    <Resource Include="elements\22-Titanium.png" />
+    <Resource Include="elements\23-Vanadium.png" />
+    <Resource Include="elements\24-Chromium.png" />
+    <Resource Include="elements\25-Manganese.png" />
+    <Resource Include="elements\26-Iron.png" />
+    <Resource Include="elements\27-Cobalt.png" />
+    <Resource Include="elements\28-Nickel.png" />
+    <Resource Include="elements\29-Copperl.png" />
+    <Resource Include="elements\30-Zinc.png" />
+    <Resource Include="elements\31-Gallium.png" />
+    <Resource Include="elements\32-Germanium.png" />
+    <Resource Include="elements\33-Arsenic.png" />
+    <Resource Include="elements\34-Selenium.png" />
+    <Resource Include="elements\35-Bromine.png" />
+    <Resource Include="elements\36-Krypton.png" />
+    <Resource Include="elements\37-Rubidium.png" />
+    <Resource Include="elements\38-Strontium.png" />
+    <Resource Include="elements\39-Yttrium.png" />
+    <Resource Include="elements\40-Zirconium.png" />
+    <Resource Include="elements\41-Niobium.png" />
+    <Resource Include="elements\42-Molybdenum.png" />
+    <Resource Include="elements\43-Technetium.png" />
+    <Resource Include="elements\44-Ruthenium.png" />
+    <Resource Include="elements\45-Rhodium.png" />
+    <Resource Include="elements\46-Palladium.png" />
+    <Resource Include="elements\47-Silver.png" />
+    <Resource Include="elements\48-Cadmium.png" />
+    <Resource Include="elements\49-Indium.png" />
+    <Resource Include="elements\50-Tin.png" />
+    <Resource Include="elements\51-Antimony.png" />
+    <Resource Include="elements\52-Tellurium.png" />
+    <Resource Include="elements\53-Iodine.png" />
+    <Resource Include="elements\54-Xenon.png" />
+    <Resource Include="elements\55-Cesium.png" />
+    <Resource Include="elements\56-Barium.png" />
+    <Resource Include="elements\57-Lanthanum.png" />
+    <Resource Include="elements\58-Cerium.png" />
+    <Resource Include="elements\59-Praseodymium.png" />
+    <Resource Include="elements\60-Neodymium.png" />
+    <Resource Include="elements\61-Promethium.png" />
+    <Resource Include="elements\62-Samarium.png" />
+    <Resource Include="elements\63-Europium.png" />
+    <Resource Include="elements\64-Gadolinium.png" />
+    <Resource Include="elements\65-Terbium.png" />
+    <Resource Include="elements\66-Dysprosium.png" />
+    <Resource Include="elements\67-Holmium.png" />
+    <Resource Include="elements\68-Erbium.png" />
+    <Resource Include="elements\69-Thulium.png" />
+    <Resource Include="elements\70-Ytterbium.png" />
+    <Resource Include="elements\71-Lutetium.png" />
+    <Resource Include="elements\72-Hafnium.png" />
+    <Resource Include="elements\73-Tantalum.png" />
+    <Resource Include="elements\74-Tungsten.png" />
+    <Resource Include="elements\75-Rhenium.png" />
+    <Resource Include="elements\76-Osmium.png" />
+    <Resource Include="elements\77-Iridium.png" />
+    <Resource Include="elements\78-Platinum.png" />
+    <Resource Include="elements\79-Gold.png" />
+    <Resource Include="elements\80-Mercury.png" />
+    <Resource Include="elements\81-Thallium.png" />
+    <Resource Include="elements\82-Lead.png" />
+    <Resource Include="elements\83-Bismuth.png" />
+    <Resource Include="elements\84-Polonium.png" />
+    <Resource Include="elements\85-Astatine.png" />
+    <Resource Include="elements\86-Radon.png" />
+    <Resource Include="elements\87-Francium.png" />
+    <Resource Include="elements\88-Radium.png" />
+    <Resource Include="elements\89-Actinium.png" />
+    <Resource Include="elements\90-Thorium.png" />
+    <Resource Include="elements\91-Protactinium.png" />
+    <Resource Include="elements\92-Uranium.png" />
+    <Resource Include="elements\93-Neptunium.png" />
+    <Resource Include="elements\94-Plutonium.png" />
+    <Resource Include="elements\95-Americium.png" />
+    <Resource Include="elements\96-Curium.png" />
+    <Resource Include="elements\97-Berkelium.png" />
+    <Resource Include="elements\98-Californium.png" />
+    <Resource Include="elements\99-Einsteinium.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

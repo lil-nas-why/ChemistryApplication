@@ -18,9 +18,9 @@ namespace ChemestryApp
 
             _topics = new Dictionary<string, string>
             {
-                { "Тела и вещества", "C:\\Users\\Student\\Desktop\\krico\\ChemestryApp\\pdf\\02.pdf" },
-                { "Физические и химические процессы", "C:\\Users\\Student\\Desktop\\krico\\ChemestryApp\\pdf\\03.pdf" },
-                { "Химические элементы", "C:\\Users\\Student\\Desktop\\krico\\ChemestryApp\\pdf\\04.pdf" }
+                { "Тела и вещества", "pdf\\02.pdf" },
+                { "Физические и химические процессы", "pdf\\03.pdf" },
+                { "Химические элементы", "pdf\\04.pdf" }
             };
 
             foreach (var topic in _topics.Keys)
